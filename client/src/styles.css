@@ -1,0 +1,95 @@
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+* {
+  font-family: arial !important;
+}
+
+.yellow-square {
+  background-color: rgba(255,205,51,255);
+  border-radius: 50px 10px;
+  font-weight: 700;
+  height: 175px;
+  margin: 20px;
+  padding: 30px !important;
+  border: 0px !important;
+  width: 100%;
+}
+
+.yellow-square:hover {
+  box-shadow: 2px 2px 4px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.pink-title {
+  color: rgb(195, 57, 145) !important;
+  font-size: xx-large;
+}
+
+.light-text {
+  color: rgb(150, 150, 150) !important;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  margin: 20px;
+}
+
+.btn {
+  color: rgb(195, 57, 145);
+  border-color: rgb(195, 57, 145);
+}
+
+.btn:hover {
+  background-color: rgb(195, 57, 145);
+  border-color: rgb(195, 57, 145);
+}
+
+.btn:disabled {
+  background-color: rgb(215, 77, 165);
+  border-color: rgb(215, 77, 165);
+}
+
+.btn-primary {
+  color: white;
+  background-color: rgb(195, 57, 145);
+  border-color: rgb(195, 57, 145);
+}
+
+.bi-pencil-square {
+  color: rgb(200, 200, 200);
+}
+
+.bi-pencil-square:hover {
+  color: rgb(50, 50, 50);
+}
+
+.bi-trash3 {
+  color: rgb(255, 150, 150);
+}
+
+.bi-trash3:hover {
+  color: rgb(255, 0, 0);
+}
+
+.edit-delete {
+  width: 70px;
+}
+
+td {
+  background-color: rgb(245, 245, 245) !important;
+}
+
+.table {
+  border: 2px solid rgb(245, 245, 245);
+  border-left: 10px solid rgb(255,205,51);
+}
+
+.cancel:hover {
+  background-color: rgb(200, 200, 200);
+  color: rgb(195, 57, 145);
+}

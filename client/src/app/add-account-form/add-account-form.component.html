@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h4 class="modal-title">Enter Account Information</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="accountForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <div class="mb-3">
+      <label for="name" class="form-label">Account Name</label>
+      <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter account name">
+      <div *ngIf="accountForm.get('name')?.invalid && (accountForm.get('name')?.touched || accountForm.get('name')?.dirty)" class="text-danger">
+        <small *ngIf="accountForm.get('name')?.errors?.['required']">Name is required.</small>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="amount" class="form-label">Amount</label>
+      <input type="number" formControlName="amount" class="form-control" id="amount" placeholder="Enter amount">
+      <div *ngIf="accountForm.get('amount')?.invalid && (accountForm.get('amount')?.touched || accountForm.get('amount')?.dirty)" class="text-danger">
+        <small *ngIf="accountForm.get('amount')?.errors?.['required']">Amount is required.</small>
+      </div>
+    </div>
+    <div class="modal-footer">
+    <button type="submit" class="btn btn-primary" [disabled]="accountForm.invalid">Add Account</button>
+    </div>
+  </form>
+</div>

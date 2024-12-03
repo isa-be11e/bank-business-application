@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col" class="pink-title">Business Accounts</th>
+    <th scope="col"></th>
+    <th scope="col">{{total | currency}}</th>
+    <th scope="col" class="edit-delete"></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let account of accounts">
+      <td class="fw-bold">{{account.name}}</td>
+      <td class="light-text">{{account.id}}</td>
+      <td>{{account.amount | currency}}</td>
+      <td>
+        <i type=button class="bi bi-pencil-square" (click)="onEditClick(account)"></i>
+        <i type=button class="bi bi-trash3" (click)="onDeleteClick(account)"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

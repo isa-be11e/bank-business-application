@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-3">
+  </div>
+  <div class="col">
+    <form [formGroup]="moveMoneyForm" (ngSubmit)="onSubmit()" class="contact-form mx-5">
+      <div class="mb-3">
+        <label for="fromAccount" class="form-label">Transfer from:</label>
+        <select type="text" formControlName="fromAccount" class="form-control" id="fromAccount">
+          <option *ngFor="let account of accounts" [value]="account.id">
+            {{account.name}} - {{account.id}} (${{account.amount}})
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="number" formControlName="amount" class="form-control" id="amount" placeholder="Enter amount">
+        <div *ngIf="moveMoneyForm.get('amount')?.invalid && (moveMoneyForm.get('amount')?.touched || moveMoneyForm.get('amount')?.dirty)" class="text-danger">
+          <small *ngIf="moveMoneyForm.get('amount')?.errors?.['required']">Amount is required.</small>
+          <small *ngIf="moveMoneyForm.get('amount')?.errors?.['too large']">Amount is too large.</small>
+        </div>
+      </div>
+       <div class="mb-3">
+         <label for="toAccount" class="form-label">Transfer to:</label>
+         <select type="text" formControlName="toAccount" class="form-control" id="toAccount">
+           <option *ngFor="let account of accounts" [value]="account.id">
+             {{account.name}} - {{account.id}} (${{account.amount}})
+           </option>
+         </select>
+       </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="moveMoneyForm.invalid">Move Money</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-3">
+  </div>
+</div>

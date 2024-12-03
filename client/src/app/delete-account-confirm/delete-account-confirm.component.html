@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h4 class="modal-title">Please Confirm</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body light-text">
+  Are you sure you want to delete account:<br/>{{account.name}} - {{account.id}}
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-primary cancel" (click)="onCancelClick()">Cancel</button>
+  <button type="button" class="btn btn-primary delete" (click)="onDeleteClick()">Delete</button>
+</div>

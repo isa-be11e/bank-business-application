@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h4 class="modal-title">Edit Account Information</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="accountForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <div class="mb-3">
+      <label for="name" class="form-label">Account Name</label>
+      <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter new name">
+      <div *ngIf="accountForm.get('name')?.invalid && (accountForm.get('name')?.touched || accountForm.get('name')?.dirty)" class="text-danger">
+        <small *ngIf="accountForm.get('name')?.errors?.['required']">Name is required.</small>
+        <small *ngIf="accountForm.get('name')?.errors?.['same name']">Same name entered.</small>
+      </div>
+    </div>
+    <div class="modal-footer">
+    <button type="submit" class="btn btn-primary" [disabled]="accountForm.invalid">Save Account</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col">
+    <menu-tile icon="bi-coin" heading="Pay a Bill"></menu-tile>
+  </div>
+  <div class="col">
+    <menu-tile icon="bi-arrow-left-right" heading="Move Money" route="move-money"></menu-tile>
+  </div>
+  <div class="col">
+    <menu-tile icon="bi-send" heading="Interac e-Transfer"></menu-tile>
+  </div>
+</div>
+<account-table [accounts]="accounts" (editAccount)="editAccount($event)" (deleteAccount)="deleteAccount($event)"></account-table>
+<button class="btn btn-lg btn-outline-primary m-2" (click)="openAccountForm()">Add Account</button>
